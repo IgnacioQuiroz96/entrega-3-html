@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="css/img/Rapey_logo.png" type="images/png">
+    <title>Comida para tus arterias uwu</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- FONT OSWALD-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="static\restaurant.css">
+
+</head>
+<body>
+
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="nav-main">
+
+            <!-- Logo de la pagina-->
+            <img src="css/img/Rapey_logo.png" alt="Rapey Logo" class="nav-brand">
+
+            <!-- Etiquetas de la pagina -->
+            <ul class="nav-menu"> 
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="seleccion-registro.html">Registrate</a>
+                </li>
+
+                <li>
+
+                    <a href="restaurant.html">Restaurantes</a>
+
+                </li>
+
+                <li>
+                    <a href="sesion-cliente.html">Clientes</a>
+                </li>
+
+                <li>
+                    <a href="sesion-repartidor.html">Repartidores</a>
+                </li>
+                
+
+            </ul>
+            
+            <!-- Icono de busqueda -->
+            <ul class="nav-menu-right">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav> <!-- END NAVIGATION -->
+        <hr class="hr">
+        <h1 style="color: black;">Mc'Donnals</h1>
+        <p style="color:black";>el sinonimo de comida rapida</p>
+        <header class="restaurant">
+            <h2 style="color: rgba(126, 98, 8, 0.473);">Rapey lo tiene todo para ti</h2>         
+        </header>
+        <h1 style="color: black;">Elije ese menu que tanto te gusta</h1>
+        <p style="color: black;">nosotros lo entregamos para ti</p>
+        <p style="color: black;">dejanos tu nombre y telefono </p>
+
+
+
+        <form action="/agregar_pedido1" method="POST" id="frmPerson" class="form-horizontal">
+            <div class="form-group">
+                <input type="text" name="nombre_cliente" id="txtName" class="form-control" placeholder="Nombre ">
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="telefono_cliente" id="txtPhone" class="form-control" placeholder="telefono de contacto">
+            </div>            
+
+            <div class="form-group">
+                <p style="color: black;">Cual menu vas a llevar?</p>
+                <select name="menu_id" id="menu_id">
+                    <option value="1">Menu 1</option>
+                    <option value="2">Menu 2</option>
+                    <option value="3">Menu 3</option>
+                </select>
+                
+            </div>
+            <p style="color: black;">Cuantos vas a llevar?</p>
+            <select name="cantidadMenu" id="cantidadMenu">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=100>mucho</option>
+              </select>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Haz tu pedido!</button>
+            </div>         
+        </form>  
+
+ 
+
+        
+
+        <div class = "new-cards">
+            <div>
+                <img src="{{url_for('static', filename='hamburguesa1.jpg')}}" alt="">
+                <h3 style="color: black;">Menu 1</h3>
+                <p style="color: black;">una hamburguesa pulenta que no saque de internet a solo 1000 pesos</p>       
+            </div>
+
+
+
+            <div>
+                <img src="{{url_for('static', filename='hamburguesa2.jpg')}}" alt=""> <!-- FIX PATH -->
+                <h3 style="color: black;">Menu 2</h3>
+                <p style="color: black;">otra hamburguesa que te juro tambien venden y no saque de internet a solo 2000 pesos</p>
+                
+            </div>
+        </div> 
+
+
+
+        <div class = "new-cards">
+            <div>
+                <img src="{{url_for('static', filename='hamburguesa3.jpg')}}" alt="">
+                <h3 style="color: black;">Menu 3</h3>
+                <p style="color: black;">igual de pulenta que la segunda hamburguesa, incluso quizas un poco mas a solo 3000 pesos</p>
+                </div> 
+            <div>
+                <h2 style="color: black;">
+                    todas nuestras hambuguesas hechas con la carne mas fresca recien salida de nuestros congeladores
+                </h2>
+                <p style="color: black;"> solo pon tu nombre y telefono y Rapey se encarga del resto</p>
+                <p style="color: black;"> por cierto elegir mucho cuenta como 100 items, ojala no lo selecciones por accidente </p>
+                
+                <a class="btn" id = "btn4" > Mira mas Restaurantes<i class="fas fa-angle-double-right"></i> </a>                
+            </div>
+        </div>  
+    
+</body>
+</html>

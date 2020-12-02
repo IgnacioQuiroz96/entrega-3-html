@@ -1,0 +1,43 @@
+{% extends 'layout-voucher.html' %}
+
+{% block body %}
+
+<form action="/envio_voucher" method="POST" class="form-horizontal">
+
+    <div class="form-gorup row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Nombre del restaurante</label>
+        <div class="col-sm-10">
+            <input type="text" name="restaurant" class="form-control form-control-lg">
+        </div>
+    </div>
+
+    <div class="form-gorup row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Nombre repartidor</label>
+        <div class="col-sm-10">
+            <input type="text" name="repartidor" class="form-control form-control-lg">
+        </div>
+    </div>
+
+    <div class="form-gorup row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Cantidad pedidos</label>
+        <div class="col-sm-10">
+            <input type="text" name="pedidoC" class="form-control form-control-lg">
+        </div>
+    </div>
+
+    <div class="form-gorup row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Precio por cantidad de pedidos</label>
+        <div class="col-sm-10">
+            <input type="text" name="precio" class="form-control form-control-lg">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Enviar Voucher</button>
+    </div>
+
+    <a href="http://localhost:3007"  class="btn btn-primary btn-block">Revisar los vouchers</a>
+    
+</form>
+
+{% endblock %}

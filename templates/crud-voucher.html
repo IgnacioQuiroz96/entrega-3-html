@@ -1,0 +1,42 @@
+{% extends 'layout-voucher.html' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-7">
+        <table class="table table-striped table-bordered bg-white table-sm" style="margin-top: 20px; margin-left: 35%;">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre Restaurant</td>
+                    <td>Nombre repartidor</td>
+                    <td>Cantidad pedidos</td>
+                    <td>Pago por entrega</td>
+                    <td>Pago total a repartidor</td>
+                    <!--<td>Operaciones</td>-->
+                </tr>
+            </thead>
+    
+            <tbody>
+                {% for vouchers in voucher %}
+                <tr>
+                    <td>{{ vouchers.0 }}</td>
+                    <td>{{ vouchers.1 }}</td>
+                    <td>{{ vouchers.2 }}</td>
+                    <td>{{ vouchers.3 }}</td>
+                    <td>{{ vouchers.4 }}</td>
+                    <td>{{ vouchers.5 }}</td>
+                <!--<td>
+                    <a href="/edit_voucher/{{voucher.0}}" class="btn btn-secondary">Editar</a>
+                    <a href="/delete_voucher/{{voucher.0}}" class="btn btn-danger">Eliminar</a>
+                </td>-->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="http://localhost:3006" style="margin-top: 70px;" class="btn btn-primary btn-block">Enviar Otro Voucher</a>
+</div>
+
+{% endblock %}
