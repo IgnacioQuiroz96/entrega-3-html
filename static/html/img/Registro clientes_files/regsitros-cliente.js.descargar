@@ -1,0 +1,49 @@
+function validarLetra(e){
+    tecla = (document.all)?e.keyCode:e.which;
+
+    te = String.fromCharCode(tecla);
+
+    patron = /[A-Z a-z áéíóú]/;
+
+    return patron.test(te);
+
+}
+
+function validarNumero(e){
+    tecla = (document.all)?e.keyCode:e.which;
+
+    te = String.fromCharCode(tecla);
+
+    patron = /[0-9]/;
+
+    return patron.test(te);
+}
+
+var nuevoId;
+var db=openDatabase("itemDB","1.0","itemDB",65535)
+
+function limpiar(){
+    document.getElementById("rut").value="";
+    document.getElementById("nombre").value="";
+    document.getElementById("edad").value="";
+    document.getElementById("direccion").value="";
+}
+
+//Funcionalidad de los botones
+
+$(function(){
+    $("#crear").click(function(){
+        db.transaction(function(transaction){
+            var sql="CREATE TABLE cliente"+
+            "(rut VARCHAR(13) NOT NULL PRIMARY KEY, "+
+            "nombre VARCHAR(100) NOT NULL, "+
+            "edad NUMBER(3) NOT NULL, "+
+            "direccion VARCHAR(100) NOT NULL) ";
+            transaction.executeSql(sql,undefined,function(){
+                alert("Tabla creada exitosamente")
+            },function(transaction, err){
+                alert(err.message)
+            })
+        });
+    });
+});
